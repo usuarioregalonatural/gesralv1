@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests\ProvidersFormRequest;
+use App\Provider;
 
 class ProvidersController extends Controller
 {
@@ -35,7 +36,16 @@ class ProvidersController extends Controller
      */
     public function store(ProvidersFormRequest $request)
     {
-        return $request->all();
+        $provider = new Provider(array(
+            'cod_proveedor' => $request->get('cod_proveedor'),
+            'nombre' => $request->get('nombre'),
+            'direccion' => $request->get('direccion'),
+            'telefono' => $request->get('telefono'),
+            'email' => $request->get('email'),
+            'web' => $request->get('web')
+        ));
+        $provider->save();
+        return redirect('providers')->with('status','El proveedor has sido dado de alta.');
     }
 
     /**
