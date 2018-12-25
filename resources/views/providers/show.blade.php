@@ -11,7 +11,7 @@
                      <p><strong>Codigo: </strong>{!! $provider->cod_proveedor !!}</p>
                     <p><strong>Dirección: </strong>{!! $provider->direccion !!}</p>
                 </div>
-                <a href="#" class="btn btn-info">Editar</a>
+                 <a href="{!! action('ProvidersController@edit',$provider->id) !!}" class="btn btn-info">Editar</a>
                 <a href="#" class="btn btn-info">Borrar</a>
             </div>
         </div>

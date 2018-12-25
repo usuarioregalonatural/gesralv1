@@ -70,7 +70,8 @@ class ProvidersController extends Controller
      */
     public function edit($id)
     {
-        //
+        $provider= Provider::whereid($id)->firstOrFail();
+        return view('providers.edit',compact('provider'));
     }
 
     /**
