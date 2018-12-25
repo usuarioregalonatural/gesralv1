@@ -1090,7 +1090,5 @@ Creamos el archivo <code>views/providers/index.blade.php</code> y le agregamos e
 
 @endsection
 ``` 
-
- ```
-
+Hasta aquí la vista de la lista de proveedores.
 
