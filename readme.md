@@ -1178,7 +1178,7 @@ A continuación creamos la vista <code>providers/show.php</code> con el siguient
 Route::post('/alta-providers', 'ProvidersController@store');
 Route::get('/providers', 'ProvidersController@index');
 Route::get('/providers/{id?}', 'ProvidersController@show');
-Route::get('/providers/{id?/edit}', 'ProvidersController@edit'); <-- esta línea
+Route::get('/providers/{id?}/edit', 'ProvidersController@edit'); <-- esta línea
  ```
 Siguiente paso ir al controlador <code>app/Http/Controllers/ProvidersController.php</code> y le añadimos el siguiente contenido:
 ```php
