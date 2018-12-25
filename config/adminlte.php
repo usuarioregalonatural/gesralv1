@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'title' => 'AdminLTE 2',
+    'title' => 'Gestion Ralucart',
 
     'title_prefix' => '',
 
@@ -149,7 +149,7 @@ return [
         'PROVEEDORES',
         [
             'text'        => 'Nuevo',
-            'url'         => 'proveedores',
+            'url'         => 'providers',
             'icon'        => 'briefcase',
             'icon_color'  => 'yellow',
             'label_color' => 'success',
