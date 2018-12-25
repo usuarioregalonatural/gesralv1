@@ -1016,5 +1016,20 @@ Route::post('/providers', 'ProvidersController@index'); <-- este es el puntero n
             'icon_color'  => 'yellow',
             'label_color' => 'success',
 ```            
- 
+También ha sido necesario modificar el controlador de providers para que redireccione a alta-providers cuando salva los datos
+```php
+   public function store(ProvidersFormRequest $request)
+    {
+        $provider = new Provider(array(
+            'cod_proveedor' => $request->get('cod_proveedor'),
+            'nombre' => $request->get('nombre'),
+            'direccion' => $request->get('direccion'),
+            'telefono' => $request->get('telefono'),
+            'email' => $request->get('email'),
+            'web' => $request->get('web')
+        ));
+        $provider->save();
+        return redirect('alta-providers')->with('status','El proveedor has sido dado de alta.');
+    }
+```
 
