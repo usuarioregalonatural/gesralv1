@@ -21,5 +21,6 @@ Auth::routes();
 
 Route::get('home', function () {return view('home');});
 
-Route::get('/providers', 'ProvidersController@create');
-Route::post('/providers', 'ProvidersController@store');
+Route::get('/alta-providers', 'ProvidersController@create');
+Route::post('/alta-providers', 'ProvidersController@store');
+Route::get('/providers', 'ProvidersController@index');
