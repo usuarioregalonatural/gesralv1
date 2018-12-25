@@ -629,7 +629,7 @@ Merge made by the 'recursive' strategy.
 ```
 # Creación de entidades CRUD
 
-## Proveedores
+## Altas de Proveedores
 
 ###Crear la tabla de proveedores en la parte de migraciones
 *El nombre de tabla tiene que ser en minúsculas y en plural*
@@ -984,4 +984,37 @@ Si queremos que muestre que ha ido ok el alta del proveedor, tendremos que inclu
 ```
 **Con esto damos por finalizada la incoroporación de las alta de proveedores inicial**
 
+
+## Mostrar Proveedores
+
+Ahora vamos a comenzar trabajando para mostrar los proveedores que tenemos.
+
+Para ello, en local, nos crearemos una nueva rama "04-Mostrar-Proveedores" y trabajaremos sobre ella.
+
+Lo primero añadiremos la ruta en el archivo <code>routes/web.php</code>
+
+```php
+Route::get('/alta-providers', 'ProvidersController@create');
+Route::post('/alta-providers', 'ProvidersController@store');
+Route::post('/providers', 'ProvidersController@index'); <-- este es el puntero nuevo para mostrar
+ ```
+ Se puede observar que hemos tenido que cambiar las dos anteriores rutas para separar las altas del listado. Obviamente se ha modificado el menu en /config/adminlte.php para que apunte correctamente.
+ 
+ ```php
+        'PROVEEDORES',
+        [
+            'text'        => 'Listado',
+            'url'         => 'providers',
+            'icon'        => 'briefcase',
+            'icon_color'  => 'yellow',
+            'label_color' => 'success',
+        ],
+        [
+            'text'        => 'Nuevo',
+            'url'         => 'alta-providers',
+            'icon'        => 'briefcase',
+            'icon_color'  => 'yellow',
+            'label_color' => 'success',
+```            
+ 
 
