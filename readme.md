@@ -996,8 +996,10 @@ Lo primero añadiremos la ruta en el archivo <code>routes/web.php</code>
 ```php
 Route::get('/alta-providers', 'ProvidersController@create');
 Route::post('/alta-providers', 'ProvidersController@store');
-Route::post('/providers', 'ProvidersController@index'); <-- este es el puntero nuevo para mostrar
+Route::get('/providers', 'ProvidersController@index'); <-- este es el puntero nuevo para mostrar
  ```
+ **Ojo**, es muy importante que sea con el método GET para traernos los datos.
+ 
  Se puede observar que hemos tenido que cambiar las dos anteriores rutas para separar las altas del listado. Obviamente se ha modificado el menu en /config/adminlte.php para que apunte correctamente.
  
  ```php
@@ -1032,7 +1034,7 @@ También ha sido necesario modificar el controlador de providers para que redire
         return redirect('alta-providers')->with('status','El proveedor has sido dado de alta.');
     }
 ```
-Vale, ahora vamos a cambiar el controlardor de providers para que redirija a la vista <code>routes/index</code> dentro de la carpeta de vistas <code>providers</code>  para mostrar los datos
+Vale, ahora vamos a cambiar el controlardor de providers para que redirija a la vista <code>views/providers/index</code> dentro de la  para mostrar los datos
 ```php
    public function index()
     {
@@ -1040,6 +1042,13 @@ Vale, ahora vamos a cambiar el controlardor de providers para que redirija a la 
        return view('providers.index',compact('providers'));
     }
 ```
+<code>compact</code> convierte el resultado en un array que la pasamos a la view.
 
-El siguiente paso es crear la view para el listado. 
+El siguiente paso es crear la view index de providers para el listado. 
+
+Creamos el archivo <code>views/providers/index.php</code> y le agregamos el siguiente contenido:
+ ```php
+ 
+ ```
+
 
