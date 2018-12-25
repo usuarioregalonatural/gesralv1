@@ -57,7 +57,9 @@ class ProvidersController extends Controller
      */
     public function show($id)
     {
-        //
+        $provider= Provider::whereid($id)->firstOrFail();
+        return view('providers.show',compact('provider'));
+
     }
 
     /**
