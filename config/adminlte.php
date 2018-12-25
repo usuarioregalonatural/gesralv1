@@ -148,8 +148,15 @@ return [
         ],
         'PROVEEDORES',
         [
-            'text'        => 'Nuevo',
+            'text'        => 'Listado',
             'url'         => 'providers',
+            'icon'        => 'briefcase',
+            'icon_color'  => 'yellow',
+            'label_color' => 'success',
+        ],
+        [
+            'text'        => 'Nuevo',
+            'url'         => 'alta-providers',
             'icon'        => 'briefcase',
             'icon_color'  => 'yellow',
             'label_color' => 'success',

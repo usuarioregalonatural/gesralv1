@@ -15,7 +15,8 @@ class ProvidersController extends Controller
      */
     public function index()
     {
-        //
+       $providers= Provider::all();
+       return view('providers.index',compact('providers'));
     }
 
     /**
@@ -45,7 +46,7 @@ class ProvidersController extends Controller
             'web' => $request->get('web')
         ));
         $provider->save();
-        return redirect('providers')->with('status','El proveedor has sido dado de alta.');
+        return redirect('alta-providers')->with('status','El proveedor has sido dado de alta.');
     }
 
     /**
