@@ -20,3 +20,6 @@ Auth::routes();
 //Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('home', function () {return view('home');});
+
+Route::get('/providers', 'ProvidersController@create');
+Route::post('/providers', 'ProvidersController@store');
