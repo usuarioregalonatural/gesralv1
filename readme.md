@@ -1285,4 +1285,9 @@ A continuación vamos a crear la vista para editar <code>resources/views/provide
  ```
  Los cambios principales son los botones actualiza y cancelar y la parte en la que se muestran los valores de los campos en el formulario con **value="***valor***"** 
  
+Siguiente paso es preparar el anterior boton **Editar** para que nos lleve aquí.
 
+Para esto nos iremos a <code>resources/views/providers/show.php</code> y actualizaremos para que el botón ***Editar*** no lleve a la edición.
+```php
+
+```
