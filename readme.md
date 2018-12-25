@@ -982,3 +982,4 @@ Si queremos que muestre que ha ido ok el alta del proveedor, tendremos que inclu
 <div class="row">
         <div class="col-md-4">
 
+** Con esto damos por finalizada la incoroporación de las alta de proveedores inicial
