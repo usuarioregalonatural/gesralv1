@@ -24,7 +24,7 @@
                         @foreach($providers as $provider)
                             <tr>
                                 <td>{!! $provider->cod_proveedor !!}</td>
-                                <td>{!! $provider->nombre !!}</td>
+                                <td><a href="{!! action('ProvidersController@show', $provider->id) !!}" >{!! $provider->nombre !!}</a></td>
                                 <td>{!! $provider->direccion !!}</td>
                                 <td>{!! $provider->telefono !!}</td>
                                 <td>{!! $provider->email !!}</td>
