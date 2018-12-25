@@ -30,9 +30,9 @@ return [
     |
     */
 
-    'logo' => '<b>Admin</b>LTE',
+    'logo' => '<b>Gestion</b> Raluca Art',
 
-    'logo_mini' => '<b>A</b>LT',
+    'logo_mini' => '<b>Ra</b>lu',
 
     /*
     |--------------------------------------------------------------------------
@@ -108,80 +108,63 @@ return [
     */
 
     'menu' => [
-        'MAIN NAVIGATION',
+        'ACCESO RAPIDO',
         [
-            'text' => 'Blog',
-            'url'  => 'admin/blog',
-            'can'  => 'manage-blog',
-        ],
-        [
-            'text'        => 'Pages',
-            'url'         => 'admin/pages',
-            'icon'        => 'file',
-            'label'       => 4,
+            'text'        => 'Pedidos Clientes',
+            'url'         => 'clientes/pedidos',
+            'icon'        => 'shopping-cart',
+            'icon_color'  => 'green',
+            // 'label'       => 4,
             'label_color' => 'success',
         ],
-        'ACCOUNT SETTINGS',
         [
-            'text' => 'Profile',
-            'url'  => 'admin/settings',
-            'icon' => 'user',
+            'text'        => 'Compras Proveedores',
+            'url'         => 'proveedores/compras',
+            'icon'        => 'credit-card',
+            'icon_color'  => 'blue',
+
+            // 'label'       => 4,
+            'label_color' => 'success',
+        ],
+        'CLIENTES',
+        [
+            'text'        => 'Nuevo',
+            'url'         => 'nuevo_cliente',
+            'icon'        => 'user',
+            'icon_color'  => 'aqua',
+            'label_color' => 'success',
         ],
         [
-            'text' => 'Change Password',
-            'url'  => 'admin/settings',
-            'icon' => 'lock',
+            'text'        => 'Buscar',
+            'url'         => 'ver_clientes',
+            'icon'        => 'search',
+            'label_color' => 'success',
         ],
         [
-            'text'    => 'Multilevel',
-            'icon'    => 'share',
-            'submenu' => [
-                [
-                    'text' => 'Level One',
-                    'url'  => '#',
-                ],
-                [
-                    'text'    => 'Level One',
-                    'url'     => '#',
-                    'submenu' => [
-                        [
-                            'text' => 'Level Two',
-                            'url'  => '#',
-                        ],
-                        [
-                            'text'    => 'Level Two',
-                            'url'     => '#',
-                            'submenu' => [
-                                [
-                                    'text' => 'Level Three',
-                                    'url'  => '#',
-                                ],
-                                [
-                                    'text' => 'Level Three',
-                                    'url'  => '#',
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'text' => 'Level One',
-                    'url'  => '#',
-                ],
-            ],
+            'text'        => 'Informes',
+            'url'         => 'clientes/informes',
+            'icon'        => 'list-alt',
+            'label_color' => 'success',
         ],
-        'LABELS',
+        'PROVEEDORES',
         [
-            'text'       => 'Important',
-            'icon_color' => 'red',
+            'text'        => 'Nuevo',
+            'url'         => 'proveedores',
+            'icon'        => 'briefcase',
+            'icon_color'  => 'yellow',
+            'label_color' => 'success',
         ],
         [
-            'text'       => 'Warning',
-            'icon_color' => 'yellow',
+            'text'        => 'Buscar',
+            'url'         => 'proveedores/busqueda',
+            'icon'        => 'search',
+            'label_color' => 'success',
         ],
         [
-            'text'       => 'Information',
-            'icon_color' => 'aqua',
+            'text'        => 'Informes',
+            'url'         => 'proveedores/informes',
+            'icon'        => 'list-alt',
+            'label_color' => 'success',
         ],
     ],
 
