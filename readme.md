@@ -1032,4 +1032,14 @@ También ha sido necesario modificar el controlador de providers para que redire
         return redirect('alta-providers')->with('status','El proveedor has sido dado de alta.');
     }
 ```
+Vale, ahora vamos a cambiar el controlardor de providers para que redirija a la vista <code>routes/index</code> dentro de la carpeta de vistas <code>providers</code>  para mostrar los datos
+```php
+   public function index()
+    {
+       $providers= Provider::all();
+       return view('providers.index',compact('providers'));
+    }
+```
+
+El siguiente paso es crear la view para el listado. 
 
