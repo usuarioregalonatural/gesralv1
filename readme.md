@@ -1189,9 +1189,9 @@ Siguiente paso ir al controlador <code>app/Http/Controllers/ProvidersController.
     }
 ```
 
-A continuación vamos a crear la vista para editar <code>resources/views/providers/edit.php</code> con un contenido similar al de la creación de proveedores:
+A continuación vamos a crear la vista para editar <code>resources/views/providers/edit.blade.php</code> con un contenido similar al de la creación de proveedores:
  ```php
- @extends('adminlte::page')
+@extends('adminlte::page')
 
 @section('content')
     @if (session('status'))
@@ -1204,7 +1204,7 @@ A continuación vamos a crear la vista para editar <code>resources/views/provide
             <div class="card">
                 <div class="card-header">
                     <h3 class="card-title">
-                        Altas Proveedores
+                       Editar Proveedor
                     </h3>
                     <div>
                         <!-- Formulario -->
@@ -1227,7 +1227,7 @@ A continuación vamos a crear la vista para editar <code>resources/views/provide
                                     <label for="nombre" class="col-sm-2 control-label">Nombre:</label>
 
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="nombre" placeholder="nombre" name="nombre">
+                                        <input type="text" class="form-control" id="nombre" placeholder="nombre" name="nombre"  value="{!! $provider->nombre !!}">
                                     </div>
                                 </div>
                                 <!-- Direccion -->
@@ -1235,7 +1235,7 @@ A continuación vamos a crear la vista para editar <code>resources/views/provide
                                     <label for="direccion" class="col-sm-2 control-label">Dirección:</label>
 
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="direccion" placeholder="direccion" name="direccion">
+                                        <input type="text" class="form-control" id="direccion" placeholder="direccion" name="direccion"  value="{!! $provider->direccion !!}">
                                     </div>
                                 </div>
                                 <!---->
@@ -1244,7 +1244,7 @@ A continuación vamos a crear la vista para editar <code>resources/views/provide
                                     <label for="direccion" class="col-sm-2 control-label">Telefono:</label>
 
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="telefono" placeholder="telefono" name="telefono">
+                                        <input type="text" class="form-control" id="telefono" placeholder="telefono" name="telefono"  value="{!! $provider->telefono !!}">
                                     </div>
                                 </div>
                                 <!---->
@@ -1253,7 +1253,7 @@ A continuación vamos a crear la vista para editar <code>resources/views/provide
                                     <label for="direccion" class="col-sm-2 control-label">Email:</label>
 
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="email" placeholder="email" name="email">
+                                        <input type="text" class="form-control" id="email" placeholder="email" name="email"  value="{!! $provider->email !!}">
                                     </div>
                                 </div>
                                 <!---->
@@ -1262,7 +1262,7 @@ A continuación vamos a crear la vista para editar <code>resources/views/provide
                                     <label for="direccion" class="col-sm-2 control-label">Web:</label>
 
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="web" placeholder="web" name="web">
+                                        <input type="text" class="form-control" id="web" placeholder="web" name="web"  value="{!! $provider->web !!}">
                                     </div>
                                 </div>
                                 <!---->
@@ -1282,12 +1282,32 @@ A continuación vamos a crear la vista para editar <code>resources/views/provide
         </div>
     </div>
 @endsection
+
  ```
  Los cambios principales son los botones actualiza y cancelar y la parte en la que se muestran los valores de los campos en el formulario con **value="***valor***"** 
  
 Siguiente paso es preparar el anterior boton **Editar** para que nos lleve aquí.
 
-Para esto nos iremos a <code>resources/views/providers/show.php</code> y actualizaremos para que el botón ***Editar*** no lleve a la edición.
+Para esto nos iremos a <code>resources/views/providers/show.php</code> y actualizaremos para que el botón ***Editar*** no lleve a la edición. Quedará así:
 ```php
+@extends('adminlte::page')
+@section('content')
 
+    <div class="container col-md8 col-md-offset-2">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h2>Proveedor: <strong>{!! $provider->nombre !!}</strong></h2>
+            </div>
+            <div class="well well bs-component">
+                <div class="content">
+                     <p><strong>Codigo: </strong>{!! $provider->cod_proveedor !!}</p>
+                    <p><strong>Dirección: </strong>{!! $provider->direccion !!}</p>
+                </div>
+                 <a href="{!! action('ProvidersController@edit',$provider->id) !!}" class="btn btn-info">Editar</a>
+                <a href="#" class="btn btn-info">Borrar</a>
+            </div>
+        </div>
+    </div>
+
+@endsection
 ```
