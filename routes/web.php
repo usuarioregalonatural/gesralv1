@@ -25,3 +25,4 @@ Route::get('/alta-providers', 'ProvidersController@create');
 Route::post('/alta-providers', 'ProvidersController@store');
 Route::get('/providers', 'ProvidersController@index');
 Route::get('/providers/{id?}', 'ProvidersController@show');
+Route::get('/providers/{id?}/edit', 'ProvidersController@edit');
