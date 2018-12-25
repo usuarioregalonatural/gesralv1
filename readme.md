@@ -1157,5 +1157,18 @@ A continuación creamos la vista <code>providers/show.php</code> con el siguient
 
 @endsection
  ```
- 
+ ## Enlazar el listado con mostrar Proveedor
+ Para esto utilizaremos **helpers** de Laravel. No iremos a la view donde aparece el listado de los proveedores <code>views/providers/index.blade.php</code> y en ella modificaremos dentro del bloque @foreach uno de los campos mostrados para que enlace con la vista de un proveedor concreto:
+ ```php
+                         @foreach($providers as $provider)
+                            <tr>
+                                <td>{!! $provider->cod_proveedor !!}</td>
+                                <td><a href="{!! action('ProvidersController@show', $provider->id) !!}" >{!! $provider->nombre !!}</a></td>
+                                <td>{!! $provider->direccion !!}</td>
+                                <td>{!! $provider->telefono !!}</td>
+                                <td>{!! $provider->email !!}</td>
+                                <td>{!! $provider->web !!}</td>
+                            </tr>
+                        @endforeach
+ ```
 
