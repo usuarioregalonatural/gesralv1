@@ -1092,3 +1092,70 @@ Creamos el archivo <code>views/providers/index.blade.php</code> y le agregamos e
 ``` 
 Hasta aquí la vista de la lista de proveedores.
 
+## Mostrar un proveedor
+
+Primer paso, vamos a la definición de rutas <code>routes/web.php</code> e incluimos la nueva ruta para mostrar un proveedor;
+```php
+<?php
+
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
+|
+*/
+
+Route::get('/', function () {
+    return view('welcome');
+});
+
+Auth::routes();
+
+//Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('home', function () {return view('home');});
+
+Route::get('/alta-providers', 'ProvidersController@create');
+Route::post('/alta-providers', 'ProvidersController@store');
+Route::get('/providers', 'ProvidersController@index');
+Route::get('/providers/{id?}', 'ProvidersController@show'); <-- esta
+```
+
+Siguiente paso añadir en <code>app/Http/Controllers/ProvidersController.php</code> en la función **show** el código necesario:
+```php
+   public function show($id)
+    {
+        $provider= Provider::whereid($id)->firstOrFail();
+        return view('providers.show',compact('provider'));
+        
+    }
+```
+A continuación creamos la vista <code>providers/show.php</code> con el siguiente contenido:
+ ```php
+ @extends('adminlte::page')
+@section('content')
+
+    <div class="container col-md8 col-md-offset-2">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h2>Proveedor: <strong>{!! $provider->nombre !!}</strong></h2>
+            </div>
+            <div class="well well bs-component">
+                <div class="content">
+                     <p><strong>Codigo: </strong>{!! $provider->cod_proveedor !!}</p>
+                    <p><strong>Dirección: </strong>{!! $provider->direccion !!}</p>
+                </div>
+                <a href="#" class="btn btn-info">Editar</a>
+                <a href="#" class="btn btn-info">Borrar</a>
+            </div>
+        </div>
+    </div>
+
+@endsection
+ ```
+ 
+
