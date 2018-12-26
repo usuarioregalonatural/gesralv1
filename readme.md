@@ -1431,4 +1431,12 @@ podemos indicarle que vaya a la página anterior de esta forma:
  ```php
  return redirect()->back()->with('status','Hemos vuelto a la página anterior');
  ```
+ ### Registros
+ #### Mostrar todos los registros
+Para mostrar todos los registros de una tabla, en su Controller, en el metodo Show creamos variables de tipo array que recuperan todos los registros, por ejemplo, para mostrar todos los códigos de producto de un pedido:
+ ```php
+ $cod_producto=$pedido->cod_producto()->get();
+ return view ('pedido.show',compact('cod_pedido','cod_producto)); <-- aqui incluimos en compact para que devuelva también los códigos de los productos.
+ ```
  
+
