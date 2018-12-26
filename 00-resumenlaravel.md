@@ -25,9 +25,10 @@ php artisan migrate
 *********************************************************
 * Crear los Request
 *********************************************************
-	```bash
+```php
   php artisan make:request ProvidersFormRequest
 ```
+
 	Después modificar e true en la funcion authorize()
 
 	Poner reglas en rules
@@ -38,9 +39,9 @@ php artisan migrate
 		        ];
 ```            
     Referenciar al Request en el archvo del Controller
-
+```php
     	use App\Http\Requests\ProvidersFormRequest;
-
+```
 *********************************************************
 * Crear las rutas del modelo en router/web.php
 *********************************************************
