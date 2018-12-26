@@ -1311,6 +1311,39 @@ Para esto nos iremos a <code>resources/views/providers/show.php</code> y actuali
 
 @endsection
 ```
+## Actualizar Proveedores
+ * Primer paso, añadir una nueva ruta de edición a <code>routes/web.php</code>
+ ```php
+Route::get('home', function () {return view('home');});
+
+Route::get('/alta-providers', 'ProvidersController@create');
+Route::post('/alta-providers', 'ProvidersController@store');
+Route::get('/providers', 'ProvidersController@index');
+Route::get('/providers/{id?}', 'ProvidersController@show');
+Route::get('/providers/{id?}/edit', 'ProvidersController@edit');
+Route::post('/providers/{id?}/delete', 'ProvidersController@destroy');
+Route::post('/providers/{id?}/edit', 'ProvidersController@update');
+ ```
+  Siguiente paso ir al controlador <code>app/Http/Controllers/ProvidersController.php</code> y le añadimos el siguiente contenido:
+```php
+    public function update(ProvidersFormRequest $request, $id)
+    {
+        $provider= Provider::whereid($id)->firstOrFail();
+        $provider->cod_proveedor = $request->get('cod_proveedor');
+        $provider->nombre =  $request->get('nombre');
+        $provider->direccion = $request->get('direccion');
+        $provider->telefono = $request->get('telefono');
+        $provider->email = $request->get('email');
+        $provider->web =  $request->get('web');
+
+        $provider->save();
+        return redirect(action('ProvidersController@edit',$id))->with('status','El proveedor '. $id .'  has sido actualizado.');
+        //
+    }
+
+```
+
+
 ## Eliminar Proveedores
 
  * Primer paso, añadir una nueva ruta de edición a <code>routes/web.php</code>
@@ -1371,7 +1404,7 @@ Finalmente nos queda enviar la acción de borrado desde el botón de la pagina d
                     <p><strong>Dirección: </strong>{!! $provider->direccion !!}</p>
                 </div>
                  <a href="{!! action('ProvidersController@edit',$provider->id) !!}" class="btn btn-info pull-left">Editar</a>
-          Desde aqui -->      
+         <!-- Desde aqui -->      
                 <form method="POST" action="{!! action('ProvidersController@destroy',$provider->id) !!}" class="pull-left">
                     <input type="hidden" name="_token" value="{!! csrf_token() !!}">
                     <div>
@@ -1379,7 +1412,7 @@ Finalmente nos queda enviar la acción de borrado desde el botón de la pagina d
                     </div>
                 </form>
                 <div class="clearfix"></div>
-          Hasta aqui -->
+        <!-- Hasta aqui -->
             </div>
         </div>
     </div>
