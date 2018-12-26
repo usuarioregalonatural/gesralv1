@@ -7,17 +7,15 @@
         </div>
     @endif
 
-
     <!-- Content Wrapper. Contains page content -->
-    <div class="content-wrapper">
+    <div class="content-wrapper" >
 
         <!-- Content Header (Page header) -->
-        <section class="content-header">
+        <!-- <section class="content-header">
         </section>
-
+-->
         <!-- Main content -->
         <section class="content">
-
 
             <div class="container col-md-6 col-md-offset-0">
                 <div class="panel panel-primary">
@@ -26,7 +24,8 @@
                     </div>
                     <div class="table-responsive">
 
-                        <form class="form form-group-sm" method="POST">
+<!--                        <form class="form form-group-sm" method="POST">  -->
+                        <form class="form form-group" method="POST">
                             @foreach ($errors->all() as $error)
                                 <p class="alert alert-danger">{{ $error }}</p>
                             @endforeach

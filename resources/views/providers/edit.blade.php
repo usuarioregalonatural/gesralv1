@@ -6,16 +6,25 @@
             {{ session('status') }}
         </div>
     @endif
-    <div class="row">
-        <div class="col-md-4">
-            <div class="card">
-                <div class="card-header">
-                    <h3 class="card-title">
-                       Editar Proveedor
-                    </h3>
-                    <div>
-                        <!-- Formulario -->
-                        <form class="form-horizontal" method="POST">
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper" >
+
+        <!-- Content Header (Page header) -->
+        <!-- <section class="content-header">
+        </section>
+-->
+        <!-- Main content -->
+        <section class="content">
+
+            <div class="container col-md-6 col-md-offset-0">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h2>Editar Proveedor</h2>
+                    </div>
+                    <div class="table-responsive">
+
+                        <!--                        <form class="form form-group-sm" method="POST">  -->
+                        <form class="form form-group" method="POST">
                             @foreach ($errors->all() as $error)
                                 <p class="alert alert-danger">{{ $error }}</p>
                             @endforeach
@@ -74,18 +83,22 @@
                                 </div>
                                 <!---->
                             </div>
-                            <!-- Botones-->
-                            <div class="card-footer" align="center">
-                     <!--           <button class="btn btn-default">Cancelar</button> -->
-                                <button type="submit" class="btn btn-primary">Actualizar</button>
-                            </div>
+                                <!-- Botones-->
+                                <div class="card-footer" align="center">
+                                    <!--           <button class="btn btn-default">Cancelar</button> -->
+                                    <button type="submit" class="btn btn-primary">Actualizar</button>
+                                </div>
+
 
                         </form>
-
-                        <!-- Formulario -->
                     </div>
                 </div>
             </div>
-        </div>
+
+
+        </section>
+        <!-- /.content -->
     </div>
+    <!-- /.content-wrapper -->
+
 @endsection
