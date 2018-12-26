@@ -26,3 +26,5 @@ Route::post('/alta-providers', 'ProvidersController@store');
 Route::get('/providers', 'ProvidersController@index');
 Route::get('/providers/{id?}', 'ProvidersController@show');
 Route::get('/providers/{id?}/edit', 'ProvidersController@edit');
+Route::post('/providers/{id?}/delete', 'ProvidersController@destroy');
+Route::post('/providers/{id?}/edit', 'ProvidersController@update');
