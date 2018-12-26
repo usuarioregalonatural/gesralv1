@@ -128,10 +128,17 @@ return [
         ],
         'CLIENTES',
         [
+            'text'        => 'Listado',
+            'url'         => 'customers',
+            'icon'        => 'briefcase',
+            'icon_color'  => 'yellow',
+            'label_color' => 'success',
+        ],
+        [
             'text'        => 'Nuevo',
-            'url'         => 'nuevo_cliente',
-            'icon'        => 'user',
-            'icon_color'  => 'aqua',
+            'url'         => 'alta-customers',
+            'icon'        => 'briefcase',
+            'icon_color'  => 'yellow',
             'label_color' => 'success',
         ],
         [
