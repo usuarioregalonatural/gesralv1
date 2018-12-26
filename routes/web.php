@@ -38,3 +38,14 @@ Route::get('/customers/{id?}', 'CustomersController@show');
 Route::get('/customers/{id?}/edit', 'CustomersController@edit');
 Route::post('/customers/{id?}/delete', 'CustomersController@destroy');
 Route::post('customers/{id?}/edit', 'CustomersController@update');
+
+//Categorias Productos
+Route::get('/alta-catprods', 'CatProductsController@create');
+Route::post('/alta-catprods', 'CatProductsController@store');
+Route::get('/catprods', 'CatProductsController@index');
+Route::get('/catprods/{id?}', 'CatProductsController@show');
+Route::get('/catprods/{id?}/edit', 'CatProductsController@edit');
+Route::post('/catprods/{id?}/delete', 'CatProductsController@destroy');
+Route::post('catprods/{id?}/edit', 'CatProductsController@update');
+
+

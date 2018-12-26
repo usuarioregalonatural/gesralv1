@@ -16,7 +16,7 @@
         <!-- Main content -->
         <section class="content">
 
-            <div class="container col-md-6 col-md-offset-0">
+            <div class="container col-md-8 col-md-offset-0">
                 <div class="panel panel-primary">
                     <div class="panel-heading">
                         <h2>Altas Proveedores</h2>
