@@ -198,7 +198,7 @@ return [
                                             'text'        => 'Listado Categorias',
                                             'icon'        => 'list-alt',
                                             'icon_color'  => 'yellow',
-                                                'url'         => '#',
+                                            'url'         => 'catprods',
                                             ],
                                             [
                                             'text'        => 'Nueva Categoria',
