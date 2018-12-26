@@ -1419,3 +1419,16 @@ Finalmente nos queda enviar la acción de borrado desde el botón de la pagina d
 
 @endsection
 ```
+
+## Información útil
+### Redirect
+Se puede utilizar redirect para ir a la página anterior.
+Por ejemplo, hemos utilizado en varias ocasiones redirect para redirigir a una página o controler particular:
+```php
+   return redirect('providers')->with('status','El proveedor '. $id .'  has sido Eliminado.');
+```
+podemos indicarle que vaya a la página anterior de esta forma:
+ ```php
+ return redirect()->back()->with('status','Hemos vuelto a la página anterior');
+ ```
+ 
