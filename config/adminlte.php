@@ -126,104 +126,104 @@ return [
             // 'label'       => 4,
             'label_color' => 'success',
         ],
-        'CLIENTES',
-        [
-            'text'        => 'Listado',
-            'url'         => 'customers',
-            'icon'        => 'list-alt',
-            'icon_color'  => 'yellow',
-            'label_color' => 'success',
-        ],
-        [
-            'text'        => 'Nuevo',
-            'url'         => 'alta-customers',
-            'icon'        => 'user',
-            'icon_color'  => 'green',
-            'label_color' => 'success',
-        ],
-        [
-            'text'        => 'Buscar',
-            'url'         => 'ver_clientes',
-            'icon'        => 'search',
-            'label_color' => 'success',
-        ],
-        [
-            'text'        => 'Informes',
-            'url'         => 'clientes/informes',
-            'icon'        => 'book',
-            'label_color' => 'success',
-            'icon_color'  => 'aqua',
-        ],
-        'PROVEEDORES',
-        [
-            'text'        => 'Listado',
-            'url'         => 'providers',
-            'icon'        => 'list-alt',
-            'icon_color'  => 'yellow',
-            'label_color' => 'success',
-        ],
-        [
-            'text'        => 'Nuevo',
-            'url'         => 'alta-providers',
-            'icon'        => 'briefcase',
-            'icon_color'  => 'green',
-            'label_color' => 'success',
-        ],
-        [
-            'text'        => 'Buscar',
-            'url'         => 'proveedores/busqueda',
-            'icon'        => 'search',
-            'label_color' => 'success',
-        ],
-        [
-            'text'        => 'Informes',
-            'url'         => 'proveedores/informes',
-            'icon'        => 'book',
-            'label_color' => 'success',
-            'icon_color'  => 'aqua',
-        ],
+
+        'MANTENIMIENTOS',
         [
             'text'        => 'PRODUCTOS',
             'icon'        => 'gift',
             'icon_color'  => 'white',
             'url'         => '#',
             'submenu'     => [
-                                [
-                                'text' => 'Categorías',
-                                'icon'        => 'cube',
-                                'icon_color'  => 'orange',
-                                'url'  => '#',
-                                'submenu'   => [
-                                            [
-                                            'text'        => 'Listado Categorias',
-                                            'icon'        => 'list-alt',
-                                            'icon_color'  => 'yellow',
-                                            'url'         => 'catprods',
-                                            ],
-                                            [
-                                            'text'        => 'Nueva Categoria',
-                                            'icon'        => 'plus',
-                                            'icon_color'  => 'green',
-                                            'url'         => 'alta-catprods',
-                                            ],
+                [
+                    'text' => 'Categorías',
+                    'icon'        => 'cube',
+                    'icon_color'  => 'orange',
+                    'url'  => '#',
+                    'submenu'   => [
+                        [
+                            'text'        => 'Listado Categorias',
+                            'icon'        => 'list-alt',
+                            'icon_color'  => 'yellow',
+                            'url'         => 'catprods',
+                        ],
+                        [
+                            'text'        => 'Nueva Categoria',
+                            'icon'        => 'plus',
+                            'icon_color'  => 'green',
+                            'url'         => 'alta-catprods',
+                        ],
 
-                                ],
+                    ],
+                ],
+                [
+                    'text' => 'Subcategorías',
+                    'icon'        => 'cubes',
+                    'icon_color'  => 'orange',
+                    'url'  => '#',
+                    'submenu'   => [
+                        [
+                            'text'        => 'Listado Subcategorias',
+                            'icon'        => 'book',
+                            'url'         => '#',
+                        ],
+                    ],
+                ],
+            ],
+        ],
+
+
+        [
+            'text'        => 'CLIENTES',
+            'icon'        => 'user',
+            'icon_color'  => 'white',
+            'url'         => '#',
+            'submenu'     => [
+                                [
+                                    'text'        => 'Listado',
+                                    'url'         => 'customers',
+                                    'icon'        => 'list-alt',
+                                    'icon_color'  => 'yellow',
+                                    'label_color' => 'success',
                                 ],
                                 [
-                                'text' => 'Subcategorías',
-                                'icon'        => 'cubes',
-                                'icon_color'  => 'orange',
-                                'url'  => '#',
-                                'submenu'   => [
-                                            [
-                                                'text'        => 'Listado Subcategorias',
-                                                'icon'        => 'book',
-                                                'url'         => '#',
-                                            ],
-                                 ],
+                                    'text'        => 'Nuevo',
+                                    'url'         => 'alta-customers',
+                                    'icon'        => 'user',
+                                    'icon_color'  => 'green',
+                                    'label_color' => 'success',
                                 ],
-                            ],
+
+            ],
         ],
+
+        [
+            'text'        => 'PROVEEDORES',
+            'icon'        => 'briefcase',
+            'icon_color'  => 'white',
+            'url'         => '#',
+            'submenu'     => [
+                                [
+                                    'text'        => 'Listado',
+                                    'url'         => 'providers',
+                                    'icon'        => 'list-alt',
+                                    'icon_color'  => 'yellow',
+                                    'label_color' => 'success',
+                                ],
+                                [
+                                    'text'        => 'Nuevo',
+                                    'url'         => 'alta-providers',
+                                    'icon'        => 'briefcase',
+                                    'icon_color'  => 'green',
+                                    'label_color' => 'success',
+                                ],
+            ],
+        ],
+
+
+
+
+
+
 
     ],
 
