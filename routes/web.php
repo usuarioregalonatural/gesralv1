@@ -21,6 +21,7 @@ Auth::routes();
 
 Route::get('home', function () {return view('home');});
 
+// Proveedores
 Route::get('/alta-providers', 'ProvidersController@create');
 Route::post('/alta-providers', 'ProvidersController@store');
 Route::get('/providers', 'ProvidersController@index');
@@ -28,3 +29,12 @@ Route::get('/providers/{id?}', 'ProvidersController@show');
 Route::get('/providers/{id?}/edit', 'ProvidersController@edit');
 Route::post('/providers/{id?}/delete', 'ProvidersController@destroy');
 Route::post('/providers/{id?}/edit', 'ProvidersController@update');
+
+//Clientes
+Route::get('/alta-customers', 'CustomersController@create');
+Route::post('/alta-customers', 'CustomersController@store');
+Route::get('/customers', 'CustomersController@index');
+Route::get('/customers/{id?}', 'CustomersController@show');
+Route::get('/customers/{id?}/edit', 'CustomersController@edit');
+Route::post('/customers/{id?}/delete', 'CustomersController@destroy');
+Route::post('customers/{id?}/edit', 'CustomersController@update');
