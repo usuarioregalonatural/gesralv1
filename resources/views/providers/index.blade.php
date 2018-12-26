@@ -14,7 +14,8 @@
         @if ($providers->isEmpty())
                 <p>No hay proveedores almacenados</p>
             @else
-                <table class="table">
+                <div class="table-responsive">
+                <table class="table table-striped">
                     <thead>
                         <tr>
                             <th>Codigo</th>
@@ -39,6 +40,7 @@
                     </tbody>
 
                 </table>
+                </div>
              @endif
       </div>
   </div>

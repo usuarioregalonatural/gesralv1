@@ -130,15 +130,15 @@ return [
         [
             'text'        => 'Listado',
             'url'         => 'customers',
-            'icon'        => 'briefcase',
+            'icon'        => 'list-alt',
             'icon_color'  => 'yellow',
             'label_color' => 'success',
         ],
         [
             'text'        => 'Nuevo',
             'url'         => 'alta-customers',
-            'icon'        => 'briefcase',
-            'icon_color'  => 'yellow',
+            'icon'        => 'user',
+            'icon_color'  => 'green',
             'label_color' => 'success',
         ],
         [
@@ -150,14 +150,15 @@ return [
         [
             'text'        => 'Informes',
             'url'         => 'clientes/informes',
-            'icon'        => 'list-alt',
+            'icon'        => 'book',
             'label_color' => 'success',
+            'icon_color'  => 'aqua',
         ],
         'PROVEEDORES',
         [
             'text'        => 'Listado',
             'url'         => 'providers',
-            'icon'        => 'briefcase',
+            'icon'        => 'list-alt',
             'icon_color'  => 'yellow',
             'label_color' => 'success',
         ],
@@ -165,7 +166,7 @@ return [
             'text'        => 'Nuevo',
             'url'         => 'alta-providers',
             'icon'        => 'briefcase',
-            'icon_color'  => 'yellow',
+            'icon_color'  => 'green',
             'label_color' => 'success',
         ],
         [
@@ -177,8 +178,9 @@ return [
         [
             'text'        => 'Informes',
             'url'         => 'proveedores/informes',
-            'icon'        => 'list-alt',
+            'icon'        => 'book',
             'label_color' => 'success',
+            'icon_color'  => 'aqua',
         ],
     ],
 

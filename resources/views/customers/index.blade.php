@@ -14,7 +14,8 @@
         @if ($customers->isEmpty())
                 <p>No hay clientes almacenados</p>
             @else
-                <table class="table">
+            <div class="table-responsive">
+                <table class="table table-bordered">
                     <thead>
                         <tr>
                             <th>Codigo</th>
@@ -45,6 +46,7 @@
                     </tbody>
 
                 </table>
+            </div>
              @endif
       </div>
   </div>
