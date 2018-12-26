@@ -46,7 +46,7 @@ class ProvidersController extends Controller
             'web' => $request->get('web')
         ));
         $provider->save();
-        return redirect('alta-providers')->with('status','El proveedor has sido dado de alta.');
+        return redirect('alta-providers')->with('status','El proveedor ha sido dado de alta.');
     }
 
     /**
@@ -81,8 +81,18 @@ class ProvidersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ProvidersFormRequest $request, $id)
     {
+        $provider= Provider::whereid($id)->firstOrFail();
+        $provider->cod_proveedor = $request->get('cod_proveedor');
+        $provider->nombre =  $request->get('nombre');
+        $provider->direccion = $request->get('direccion');
+        $provider->telefono = $request->get('telefono');
+        $provider->email = $request->get('email');
+        $provider->web =  $request->get('web');
+
+        $provider->save();
+        return redirect(action('ProvidersController@edit',$id))->with('status','El proveedor '. $id .'  ha sido actualizado.');
         //
     }
 
@@ -94,6 +104,8 @@ class ProvidersController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $provider= Provider::whereid($id)->firstOrFail();
+        $provider->delete();
+        return redirect('providers')->with('status','El proveedor '. $id .'  ha sido Eliminado.');
     }
 }

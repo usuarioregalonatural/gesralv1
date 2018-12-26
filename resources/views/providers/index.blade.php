@@ -6,7 +6,12 @@
             <div class="panel-heading">
                 <h2>Proveedores</h2>
             </div>
-            @if ($providers->isEmpty())
+            @if (session('status'))
+                <div class="alert alert-success">
+                    {{ session('status') }}
+                </div>
+            @endif
+        @if ($providers->isEmpty())
                 <p>No hay proveedores almacenados</p>
             @else
                 <table class="table">

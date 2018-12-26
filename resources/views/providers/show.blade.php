@@ -10,9 +10,18 @@
                 <div class="content">
                      <p><strong>Codigo: </strong>{!! $provider->cod_proveedor !!}</p>
                     <p><strong>Dirección: </strong>{!! $provider->direccion !!}</p>
+                    <p><strong>Teléfono: </strong>{!! $provider->telefono !!}</p>
+                    <p><strong>E-Mail: </strong>{!! $provider->email !!}</p>
+                    <p><strong>Web: </strong>{!! $provider->web !!}</p>
                 </div>
-                 <a href="{!! action('ProvidersController@edit',$provider->id) !!}" class="btn btn-info">Editar</a>
-                <a href="#" class="btn btn-info">Borrar</a>
+                 <a href="{!! action('ProvidersController@edit',$provider->id) !!}" class="btn btn-info pull-left">Editar</a>
+                <form method="POST" action="{!! action('ProvidersController@destroy',$provider->id) !!}" class="pull-left">
+                    <input type="hidden" name="_token" value="{!! csrf_token() !!}">
+                    <div>
+                        <button type="submit" class="btn btn-warning">Eliminar</button>
+                    </div>
+                </form>
+                <div class="clearfix"></div>
             </div>
         </div>
     </div>

@@ -76,7 +76,7 @@
                             </div>
                             <!-- Botones-->
                             <div class="card-footer" align="center">
-                                <button class="btn btn-default">Cancelar</button>
+                     <!--           <button class="btn btn-default">Cancelar</button> -->
                                 <button type="submit" class="btn btn-primary">Actualizar</button>
                             </div>
 
