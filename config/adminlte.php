@@ -182,6 +182,49 @@ return [
             'label_color' => 'success',
             'icon_color'  => 'aqua',
         ],
+        [
+            'text'        => 'PRODUCTOS',
+            'icon'        => 'gift',
+            'icon_color'  => 'white',
+            'url'         => '#',
+            'submenu'     => [
+                                [
+                                'text' => 'Categorías',
+                                'icon'        => 'cube',
+                                'icon_color'  => 'orange',
+                                'url'  => '#',
+                                'submenu'   => [
+                                            [
+                                            'text'        => 'Listado Categorias',
+                                            'icon'        => 'list-alt',
+                                            'icon_color'  => 'yellow',
+                                            'url'         => 'catprods',
+                                            ],
+                                            [
+                                            'text'        => 'Nueva Categoria',
+                                            'icon'        => 'plus',
+                                            'icon_color'  => 'green',
+                                            'url'         => 'alta-catprods',
+                                            ],
+
+                                ],
+                                ],
+                                [
+                                'text' => 'Subcategorías',
+                                'icon'        => 'cubes',
+                                'icon_color'  => 'orange',
+                                'url'  => '#',
+                                'submenu'   => [
+                                            [
+                                                'text'        => 'Listado Subcategorias',
+                                                'icon'        => 'book',
+                                                'url'         => '#',
+                                            ],
+                                 ],
+                                ],
+                            ],
+        ],
+
     ],
 
     /*
