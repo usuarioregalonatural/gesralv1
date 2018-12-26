@@ -1311,3 +1311,78 @@ Para esto nos iremos a <code>resources/views/providers/show.php</code> y actuali
 
 @endsection
 ```
+## Eliminar Proveedores
+
+ * Primer paso, añadir una nueva ruta de edición a <code>routes/web.php</code>
+ ```php
+Route::get('home', function () {return view('home');});
+
+Route::get('/alta-providers', 'ProvidersController@create');
+Route::post('/alta-providers', 'ProvidersController@store');
+Route::get('/providers', 'ProvidersController@index');
+Route::get('/providers/{id?}', 'ProvidersController@show');
+Route::get('/providers/{id?}/edit', 'ProvidersController@edit');
+Route::post('/providers/{id?}/delete', 'ProvidersController@destroy');
+ ```
+ Siguiente paso ir al controlador <code>app/Http/Controllers/ProvidersController.php</code> y le añadimos el siguiente contenido:
+```php
+    public function destroy($id)
+    {
+        $provider= Provider::whereid($id)->firstOrFail();
+        $provider->delete();
+        return redirect('providers')->with('status','El proveedor '. $id .'  has sido Eliminado.');
+    }
+```
+Luego para que se muestre este mensaje en la pagina de listado de proveedores habrá que añadir el trozo de código en <code>resources/views/providers/index.blade.php</code>
+
+```php
+@extends('adminlte::page')
+@section('content')
+
+    <div class="container col-md8 col-md-offset-2">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h2>Proveedores</h2>
+            </div>
+            @if (session('status'))
+                <div class="alert alert-success">
+                    {{ session('status') }}
+                </div>
+            @endif
+        @if ($providers->isEmpty())
+                <p>No hay proveedores almacenados</p>
+            @else
+                <table class="table">
+ ...
+ ```
+Finalmente nos queda enviar la acción de borrado desde el botón de la pagina de edición <code>resources/views/providers/edit.blade.php</code>
+```php
+@extends('adminlte::page')
+@section('content')
+
+    <div class="container col-md8 col-md-offset-2">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h2>Proveedor: <strong>{!! $provider->nombre !!}</strong></h2>
+            </div>
+            <div class="well well bs-component">
+                <div class="content">
+                     <p><strong>Codigo: </strong>{!! $provider->cod_proveedor !!}</p>
+                    <p><strong>Dirección: </strong>{!! $provider->direccion !!}</p>
+                </div>
+                 <a href="{!! action('ProvidersController@edit',$provider->id) !!}" class="btn btn-info pull-left">Editar</a>
+          Desde aqui -->      
+                <form method="POST" action="{!! action('ProvidersController@destroy',$provider->id) !!}" class="pull-left">
+                    <input type="hidden" name="_token" value="{!! csrf_token() !!}">
+                    <div>
+                        <button type="submit" class="btn btn-warning">Eliminar</button>
+                    </div>
+                </form>
+                <div class="clearfix"></div>
+          Hasta aqui -->
+            </div>
+        </div>
+    </div>
+
+@endsection
+```
