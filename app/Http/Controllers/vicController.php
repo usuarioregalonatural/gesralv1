@@ -15,8 +15,7 @@ class CatProductsController extends Controller
      */
     public function index()
     {
-        //$catproducts= CatProduct::all();
-        $catproducts= CatProduct::paginate(20);
+        $catproducts= CatProduct::all();
         return view('catproducts.index',compact('catproducts'));
 
     }

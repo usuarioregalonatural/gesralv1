@@ -115,6 +115,7 @@
                             <!-- Botones-->
                             <div class="card-footer" align="center">
                                 <button type="submit" class="btn btn-info">Guardar</button>
+                                <input type="button" onclick="history.back()" class="btn btn-primary" value="Volver">
                             </div>
 
                         </form>
