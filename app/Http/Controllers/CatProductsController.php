@@ -13,10 +13,15 @@ class CatProductsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         //$catproducts= CatProduct::all();
-        $catproducts= CatProduct::paginate(20);
+  //      $catproducts= CatProduct::paginate(20);
+        $des_categoria= $request->get('des_categoria');
+        $catproducts=CatProduct::orderBy('id','DESC')
+            ->name($des_categoria)
+            ->paginate(20);
+
         return view('catproducts.index',compact('catproducts'));
 
     }

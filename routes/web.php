@@ -24,7 +24,7 @@ Route::get('home', function () {return view('home');});
 // Proveedores
 Route::get('/alta-providers', 'ProvidersController@create')->name('provalta');
 Route::post('/alta-providers', 'ProvidersController@store');
-Route::get('/providers', 'ProvidersController@index');
+Route::get('/providers', 'ProvidersController@index')->name('providers');
 Route::get('/providers/{id?}', 'ProvidersController@show')->name('provshow');
 Route::get('/providers/{id?}/edit', 'ProvidersController@edit');
 Route::post('/providers/{id?}/delete', 'ProvidersController@destroy');
@@ -42,7 +42,7 @@ Route::post('customers/{id?}/edit', 'CustomersController@update');
 //Categorias Productos
 Route::get('/alta-catprods', 'CatProductsController@create')->name('catealta');
 Route::post('/alta-catprods', 'CatProductsController@store');
-Route::get('/catprods', 'CatProductsController@index');
+Route::get('/catprods', 'CatProductsController@index')->name('catproducts');
 Route::get('/catprods/{id?}', 'CatProductsController@show')->name('cateshow');
 Route::get('/catprods/{id?}/edit', 'CatProductsController@edit');
 Route::post('/catprods/{id?}/delete', 'CatProductsController@destroy');

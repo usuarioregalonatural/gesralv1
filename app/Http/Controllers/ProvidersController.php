@@ -13,11 +13,18 @@ class ProvidersController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
       // $providers= Provider::all();
-       $providers= Provider::paginate(20);
-       return view('providers.index',compact('providers'));
+       //$providers= Provider::paginate(20);
+        $nombre= $request->get('nombre');
+        $providers=Provider::orderBy('id','DESC')
+            ->name($nombre)
+            ->paginate(20);
+
+
+
+        return view('providers.index',compact('providers'));
     }
 
     /**
