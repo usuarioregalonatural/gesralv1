@@ -1,40 +1,58 @@
 @extends('adminlte::page')
 @section('content')
-
-    <div class="container col-md8 col-md-offset-2">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h2>Categorias Productos</h2>
-            </div>
-            @if (session('status'))
-                <div class="alert alert-success">
-                    {{ session('status') }}
-                </div>
-            @endif
-        @if ($catproducts->isEmpty())
-                <p>No hay categorias definidas</p>
-            @else
-            <div class="table-responsive">
-                <table class="table table-bordered">
-                    <thead>
+    <div class="container container-fluid">
+        <div class="row ">
+            <div class="col-md-12 col-md-offset-0 ">
+                <div class="panel panel-default ">
+                    <div class="panel-heading">
+                        <b>LISTADO DE CATEGORIAS PRODUCTOS</b>
+                        <a href="{{route('catealta')}}" class="btn btn-sm btn-primary pull-right">
+                            NUEVO
+                        </a>
+                    </div>
+                    <div class="table-responsive">
                         <tr>
-                            <th class="col col-md-offset-2">Codigo Categoria</th>
-                            <th>Descripción</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach($catproducts as $catproduct)
-                            <tr>
-                                <td class="col col-md-offset-2">{!! $catproduct->cod_categoria !!}</td>
-                                <td><a href="{!! action('CatProductsController@show', $catproduct->id) !!}" >{!! $catproduct->des_categoria !!}</a></td>
-                            </tr>
-                        @endforeach
-                    </tbody>
+                            <div class="table-responsive">
+                                <table>
+                                    <tr>
+                                        <td>Busqueda: </td>
+                                        <td><input type="text" class="form-control" placeholder="nombre"></td>
+                                        <td><input type="button" class="btn btn-primary" value="Buscar"></td>
+                                    </tr>
 
-                </table>
+                                </table>
+                            </div>
+                        </tr>
+
+                        <table class="table-striped table-hover table-responsive-md ">
+                            <thead>
+                            <tr>
+                                <th colspan="1">&nbsp</th>  <!-- 3 puesto que se van a incluir 3 botones  -->
+                                <th>Cod. Categoria</th>
+                                <th>Descripción</th>
+                            </tr>
+                            </thead>
+                            <tbody class="container-fluid">
+                            @foreach($catproducts as $catproduct)
+                                <tr>
+                                    <td style="cursor:pointer">
+                                        <a href="{{route('cateshow', $catproduct->id)}}" class="btn btn-sm btn-default">
+                                            Ver
+                                        </a>
+                                    </td>
+                                    <td style="cursor:pointer">{!! $catproduct->cod_categoria !!}</td>
+                                    <td style="cursor:pointer">{!! $catproduct->des_categoria !!}</td>
+                                </tr>
+                            @endforeach
+                            </tbody>
+                        </table>
+                        {!! $catproducts->render() !!}
+                    </div>
+                </div>
             </div>
-             @endif
-      </div>
-  </div>
+
+        </div>
+
+    </div>
 
 @endsection

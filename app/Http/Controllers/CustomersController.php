@@ -20,7 +20,7 @@ class CustomersController extends Controller
         $customers=Customer::paginate(20);
 
 //        return view('customers.index',compact('customers'));
-        return view('vic',compact('customers'));
+        return view('customers.index',compact('customers'));
 
     }
 
