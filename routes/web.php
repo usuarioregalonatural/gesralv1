@@ -31,10 +31,10 @@ Route::post('/providers/{id?}/delete', 'ProvidersController@destroy');
 Route::post('/providers/{id?}/edit', 'ProvidersController@update');
 
 //Clientes
-Route::get('/alta-customers', 'CustomersController@create');
+Route::get('/alta-customers', 'CustomersController@create')->name('custalta');
 Route::post('/alta-customers', 'CustomersController@store');
-Route::get('/customers', 'CustomersController@index');
-Route::get('/customers/{id?}', 'CustomersController@show');
+Route::get('/customers', 'CustomersController@index')->name('customers');
+Route::get('/customers/{id?}', 'CustomersController@show')->name('custshow');
 Route::get('/customers/{id?}/edit', 'CustomersController@edit');
 Route::post('/customers/{id?}/delete', 'CustomersController@destroy');
 Route::post('customers/{id?}/edit', 'CustomersController@update');
@@ -48,4 +48,6 @@ Route::get('/catprods/{id?}/edit', 'CatProductsController@edit');
 Route::post('/catprods/{id?}/delete', 'CatProductsController@destroy');
 Route::post('catprods/{id?}/edit', 'CatProductsController@update');
 
+Route::get('/vic', 'CatProductsController@index');
+//Route::get('altavic', 'CustomersController@create')->name('altacustomer');
 

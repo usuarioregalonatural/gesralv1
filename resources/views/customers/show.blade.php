@@ -23,6 +23,8 @@
                     <input type="hidden" name="_token" value="{!! csrf_token() !!}">
                     <div>
                         <button type="submit" class="btn btn-warning">Eliminar</button>
+                        <input type="button" onclick="history.back()" class="btn btn-primary" value="Volver">
+
                     </div>
                 </form>
                 <div class="clearfix"></div>

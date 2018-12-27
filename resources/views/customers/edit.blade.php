@@ -115,6 +115,8 @@
                                 <div class="card-footer" align="center">
                                     <!--           <button class="btn btn-default">Cancelar</button> -->
                                     <button type="submit" class="btn btn-primary">Actualizar</button>
+                                    <input type="button" onclick="history.back()" class="btn btn-primary" value="Volver">
+
                                 </div>
 
                         </form>
