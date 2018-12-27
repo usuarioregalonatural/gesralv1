@@ -43,3 +43,38 @@ y dentro de él, creremos lo siguiente:
 ```
 esto nos creará 600 registros de prueba
 
+Por último, configuramos la bbdd en el fichero .env.
+
+y ahora rellenamos de datos la tabla de prueba
+En el terminal:
+```php
+php artisan migrate:refresh --seed
+```
+
+### Creación de la vista
+vamos a resources/views/welcome.blade.php y la renombramos por users.blade.php
+borramos todo
+
+
+## FORMULARIO DE BUSQUEDA
+
+```html
+                            <h4>Busqueda de Usuarios
+                                {{ Form::open(['route'=> 'customers', 'method'=>'GET',  'class'=>'form-inline pull-right'])}}
+                                <div class="form-group">
+                                    {{Form::text('nombre', null, ['class'=>'form-control', 'placeholder'=>'nombre'])}}
+                                </div>
+                                <div class="form-group">
+                                    {{Form::text('poblacion', null, ['class'=>'form-control', 'placeholder'=>'poblacion'])}}
+                                </div>
+
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-default">
+                                        <span class=" icon search"></span>
+                                    </button>
+                                </div>
+
+                                {{ Form::close() }}
+                            </h4>
+```
+
