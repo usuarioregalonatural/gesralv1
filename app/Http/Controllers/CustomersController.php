@@ -13,11 +13,15 @@ class CustomersController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
  //       $customers= Customer::all();
   //      $customers=Customer::paginate();
-        $customers=Customer::paginate(20);
+  //      $customers=Customer::paginate(20);
+        $nombre= $request->get('nombre');
+        $customers=Customer::orderBy('id','DESC')
+            ->name($nombre)
+            ->paginate(20);
 
 //        return view('customers.index',compact('customers'));
         return view('customers.index',compact('customers'));

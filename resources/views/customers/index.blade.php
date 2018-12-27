@@ -19,18 +19,20 @@
                                 <table>
                                     <tr>
                                         <td>Busqueda: </td>
-                                        <td><input type="text" class="form-control" placeholder="nombre"></td>
-                                        <td><input type="button" class="btn btn-primary" value="Buscar"></td>
+                                        {{ Form::open(['route'=> 'customers', 'method'=>'GET']) }}
+                                        <td>{{Form::text ('nombre',null, ['class'=>'form-control', 'placeholder'=>'nombre'])}}</td>
+                                        <!--       <td><input type="text" class="form-control" placeholder="nombre"></td> -->
+                                        <td><button type="submit" class="btn btn-primary">Buscar</button></td>
+                                        <!--   <td><input type="button" class="btn btn-primary" value="Buscar"></td> -->
                                     </tr>
+                                  </table>
+                              </div>
+                          </tr>
 
-                                </table>
-                            </div>
-                        </tr>
-
-                        <table class="table-striped table-hover table-responsive-md ">
-                            <thead>
-                                 <tr>
-                                    <th colspan="1">&nbsp</th>  <!-- 3 puesto que se van a incluir 3 botones  -->
+                          <table class="table-striped table-hover table-responsive-md ">
+                              <thead>
+                                   <tr>
+                                      <th colspan="1">&nbsp</th>  <!-- 3 puesto que se van a incluir 3 botones  -->
                                     <th>Nombre</th>
                                    <th>Direccion</th>
                                     <th>Poblacion</th>

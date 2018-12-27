@@ -16,10 +16,12 @@
                                 <table>
                                     <tr>
                                         <td>Busqueda: </td>
-                                        <td><input type="text" class="form-control" placeholder="nombre"></td>
-                                        <td><input type="button" class="btn btn-primary" value="Buscar"></td>
+                                        {{ Form::open(['route'=> 'providers', 'method'=>'GET']) }}
+                                        <td>{{Form::text ('nombre',null, ['class'=>'form-control', 'placeholder'=>'nombre'])}}</td>
+                                        <!--       <td><input type="text" class="form-control" placeholder="nombre"></td> -->
+                                        <td><button type="submit" class="btn btn-primary">Buscar</button></td>
+                                        <!--   <td><input type="button" class="btn btn-primary" value="Buscar"></td> -->
                                     </tr>
-
                                 </table>
                             </div>
                         </tr>
