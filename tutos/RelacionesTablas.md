@@ -49,7 +49,15 @@ Si necesitaramos enviar más de una lista de datos, añadiriamos otra linea como
     }
 ```
 
-
+Esto había que añadirlo también para la función edit
+```php
+    public function edit($id)
+    {
+        $categorias=CatProduct::orderBy('des_categoria','ASC')->pluck('des_categoria','id'); <--Nuevo
+        $subcatproduct= SubcatProduct::whereid($id)->firstOrFail();
+        return view('subcatproducts.edit',compact('subcatproduct','categorias')); <-- Se pasa además 'categorias'
+    }
+```
 
 
 
