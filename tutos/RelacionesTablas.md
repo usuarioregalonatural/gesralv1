@@ -58,6 +58,22 @@ Esto había que añadirlo también para la función edit
         return view('subcatproducts.edit',compact('subcatproduct','categorias')); <-- Se pasa además 'categorias'
     }
 ```
+
+Y modificar la parte de Store para añadir el campo relacionado
+ ```php
+    public function store(Request $request)
+    {
+        $subcatproduct = new SubcatProduct(array(
+            'cod_subcategoria' => $request->get('cod_subcategoria'),
+            'des_subcategoria' => $request->get('des_subcategoria'),
+            'categoria_id' => $request->get('categoria_id') <--Este campo
+        ));
+        $subcatproduct->save();
+        return redirect('alta-subcatprods')->with('status','La subcategoria de producto ha sido dado de alta.');
+
+    }
+
+ ```
 Asegurarse que al principio del controlador <code>SubcatProductsController</code>, se referencia a las entidades de las cuales obtenemos datos:
 ```php
 <?php
