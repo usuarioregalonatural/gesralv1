@@ -73,6 +73,18 @@ use App\Http\Requests\SubcatProductsRequest;
 
 ```
 
+### Cambios en el Formulario <code>add.blade.php</code>
+
+```php
+                 <!-- Categoria -->
+                 <div class="form-group">
+                     {{ Form::label('categoria_id','Categoria') }}
+                     {{ Form::select('categoria_id',$categorias,null,['class'=>'form-control'])}}
+                 </div>
+```
+Aquí indicaremos un label para visualizar y luego un *select* en el cual recogemos el id (categoria_id) de la variable $categorias que es la que devolvemos en el Controller con todas las categorias.
+
+
 
 
 
