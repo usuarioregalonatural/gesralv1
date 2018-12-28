@@ -48,6 +48,15 @@ Route::get('/catprods/{id?}/edit', 'CatProductsController@edit');
 Route::post('/catprods/{id?}/delete', 'CatProductsController@destroy');
 Route::post('catprods/{id?}/edit', 'CatProductsController@update');
 
+//Subcategorias Productos
+Route::get('/alta-subcatprods', 'SubcatProductsController@create')->name('subcatealta');
+Route::post('/alta-subcatprods', 'SubcatProductsController@store');
+Route::get('/subcatprods', 'SubcatProductsController@index')->name('subcatproducts');
+Route::get('/subcatprods/{id?}', 'SubcatProductsController@show')->name('subcateshow');
+Route::get('/subcatprods/{id?}/edit', 'SubcatProductsController@edit');
+Route::post('/subcatprods/{id?}/delete', 'SubcatProductsController@destroy');
+Route::post('subcatprods/{id?}/edit', 'SubcatProductsController@update');
+
 //Route::get('/vic', 'CatProductsController@index');
 //Route::get('altavic', 'CustomersController@create')->name('altacustomer');
 
