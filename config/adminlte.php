@@ -163,9 +163,17 @@ return [
                     'submenu'   => [
                         [
                             'text'        => 'Listado Subcategorias',
-                            'icon'        => 'book',
-                            'url'         => '#',
+                            'icon'        => 'list-alt',
+                            'icon_color'  => 'yellow',
+                            'url'         => 'subcatprods',
                         ],
+                        [
+                            'text'        => 'Nueva Subcategoria',
+                            'icon'        => 'plus',
+                            'icon_color'  => 'green',
+                            'url'         => 'alta-subcatprods',
+                        ],
+
                     ],
                 ],
             ],
