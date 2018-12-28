@@ -25,7 +25,7 @@ Al crear la migración de la nueva tabla, se indicará el campo nuevo que relaci
 Después continuamos con la creación de todos los controllers, modelo, vistas, etc. como con cualquier otra entidad.
 
 ## Relacionando en la aplicación
-### Cambios en el fichero SubcatProductsController
+### Cambios en el fichero <code>SubcatProductsController.php</code>
 
 Primero pasaremos el listado completo de las Categorias en la función Create
 ```php
@@ -57,6 +57,20 @@ Esto había que añadirlo también para la función edit
         $subcatproduct= SubcatProduct::whereid($id)->firstOrFail();
         return view('subcatproducts.edit',compact('subcatproduct','categorias')); <-- Se pasa además 'categorias'
     }
+```
+Asegurarse que al principio del controlador <code>SubcatProductsController</code>, se referencia a las entidades de las cuales obtenemos datos:
+```php
+<?php
+
+namespace App\Http\Controllers;
+
+use App\CatProduct; <--Aqui
+use App\SubcatProduct;
+use Illuminate\Http\Request;
+use App\Http\Requests\SubcatProductsRequest;
+
+...
+
 ```
 
 
